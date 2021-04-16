@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="test.js" />
     <Content Include="index.html" />
     <Compile Include="Remoting.fs" />
     <Compile Include="Client.fs" />
@@ -27,5 +28,9 @@
   <ItemGroup>
     <PackageReference Update="FSharp.Core" Version="5.0.1" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="powershell -c &quot;copy index.html bin\Debug\netcoreapp3.1 -force -Recurse&quot;&#xD;&#xA;powershell -c &quot;copy test.js bin\Debug\netcoreapp3.1 -force -Recurse&quot;&#xD;&#xA;powershell -c &quot;copy test.js wwwroot -force -Recurse&quot;" />
+  </Target>
 
 </Project>

@@ -1,11 +1,11 @@
 (function(Global)
 {
  "use strict";
- var testWSJS,Client,TI,JQuery,Client$1,WebSharper,UI,Var$1,Submitter,View,Remoting,AjaxRemotingProvider,Concurrency,Doc,AttrProxy,IntelliFactory,Runtime,List,Client$2,Templates,Arrays;
+ var testWSJS,Client,TI,JSLib,Client$1,WebSharper,UI,Var$1,Submitter,View,Remoting,AjaxRemotingProvider,Concurrency,Doc,AttrProxy,IntelliFactory,Runtime,List,Client$2,Templates,Arrays;
  testWSJS=Global.testWSJS=Global.testWSJS||{};
  Client=testWSJS.Client=testWSJS.Client||{};
  TI=Global.TI=Global.TI||{};
- JQuery=TI.JQuery=TI.JQuery||{};
+ JSLib=TI.JSLib=TI.JSLib||{};
  Client$1=TI.Client=TI.Client||{};
  WebSharper=Global.WebSharper;
  UI=WebSharper&&WebSharper.UI;
@@ -31,7 +31,7 @@
   vReversed=View.MapAsync(function(a)
   {
    var b;
-   return a!=null&&a.$==1?(new AjaxRemotingProvider.New()).Async("testWSJS:testWSJS.Server.DoSomething:1803086540",[a.$0]):(b=null,Concurrency.Delay(function()
+   return a!=null&&a.$==1?(new AjaxRemotingProvider.New()).Async("testWSJS:testWSJS.Server.DoSomething:1506203381",[a.$0]):(b=null,Concurrency.Delay(function()
    {
     return Concurrency.Return("");
    }));
@@ -41,7 +41,7 @@
    submit.Trigger();
   }),Doc.Element("hr",[],[]),Doc.Element("h4",[AttrProxy.Create("class","text-muted")],[Doc.TextNode("The server responded:")]),Doc.Element("div",[AttrProxy.Create("class","jumbotron")],[Doc.Element("h1",[],[Doc.TextView(vReversed)])])]);
  };
- JQuery["JQuery.TagInput"]=function(_this,onChange,onSelect)
+ JSLib["JQuery.TagInput"]=function(_this,onChange,onSelect)
  {
   function getValue()
   {
@@ -62,14 +62,26 @@
  };
  Client$1.Main=function()
  {
+  return Doc.Element("div",[],[Doc.Button("run",[],function()
+  {
+   var b;
+   Concurrency.Start((b=null,Concurrency.Delay(function()
+   {
+    Client$1.Main0();
+    return Concurrency.Zero();
+   })),null);
+  })]);
+ };
+ Client$1.Main0=function()
+ {
   var input,pre,a,states;
-  input=Doc.Element("input",[AttrProxy.Create("id","tags"),AttrProxy.Create("data-role","tagsinput")],[]);
+  input=Doc.Element("input",[AttrProxy.Create("id","tags"),AttrProxy.Create("type","text"),AttrProxy.Create("data-role","tagsinput"),AttrProxy.Create("value","Amsterdam,Washington,Sydney,Beijing,Cairo")],[]);
   pre=Doc.Element("pre",[AttrProxy.Create("id","preview"),AttrProxy.Create("style","margin-top:30px;")],[]);
   a=Doc.Concat(List.ofArray([input,pre]));
   Templates.LoadLocalTemplates("");
   Doc.RunById("main",a);
   states=["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
-  JQuery["JQuery.TagInput"](Global.jQuery("#tags"),function(t)
+  JSLib["JQuery.TagInput"](Global.jQuery("#tags"),function(t)
   {
    var query;
    query=t[0];
@@ -81,6 +93,5 @@
   {
    pre.SetText(a$1);
   });
-  return Doc.Element("div",[],[]);
  };
 }(self));
