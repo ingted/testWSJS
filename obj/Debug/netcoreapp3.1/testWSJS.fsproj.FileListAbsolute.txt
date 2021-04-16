@@ -53,3 +53,4 @@ Z:\SharFTrade\testWSJS\bin\Debug\netcoreapp3.1\IntelliFactory.Xml.dll
 Z:\SharFTrade\testWSJS\bin\Debug\netcoreapp3.1\WebSharper.Html.Client.dll
 Z:\SharFTrade\testWSJS\bin\Debug\netcoreapp3.1\WebSharper.Html.Server.dll
 Z:\SharFTrade\testWSJS\bin\Debug\netcoreapp3.1\WebSharper.JQueryUI.dll
+Z:\SharFTrade\testWSJS\obj\Debug\netcoreapp3.1\testWSJS.fsprojAssemblyReference.cache

@@ -31,7 +31,7 @@
   vReversed=View.MapAsync(function(a)
   {
    var b;
-   return a!=null&&a.$==1?(new AjaxRemotingProvider.New()).Async("testWSJS:testWSJS.Server.DoSomething:1506203381",[a.$0]):(b=null,Concurrency.Delay(function()
+   return a!=null&&a.$==1?(new AjaxRemotingProvider.New()).Async("testWSJS:testWSJS.Server.DoSomething:89585888",[a.$0]):(b=null,Concurrency.Delay(function()
    {
     return Concurrency.Return("");
    }));

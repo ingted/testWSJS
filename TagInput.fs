@@ -19,7 +19,7 @@ module Resources =
     type TagsInput() =
         inherit BaseResource("https://raw.githack.com/bootstrap-tagsinput/bootstrap-tagsinput/master/src/bootstrap-tagsinput.js")
 
-    [<Require(typeof<TypeAhead>)>]
+    [<Require(typeof<TagsInput>)>]
     type TagsInputCSS() =
         inherit BaseResource("https://raw.githack.com/bootstrap-tagsinput/bootstrap-tagsinput/master/src/bootstrap-tagsinput.css")
 
